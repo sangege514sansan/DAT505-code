@@ -24,3 +24,9 @@
 ## Section7   
 
     This task including two parts. The first one is a small box using optional texture and droping  out. The second one is the rolling eyes.
+## Section8
+
+    With two items like the plane change colors and the rectangle that changes color with mouse movement.
+## Section9
+
+    The first one is the warships with accompaniment music and the mouse can change ships' color.The second is the  twinking  and teleporting roundness.    
