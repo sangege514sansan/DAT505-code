@@ -30,3 +30,6 @@
 ## Section9
 
     The first one is the warships with accompaniment music and the mouse can change ships' color.The second is the  twinking  and teleporting roundness.    
+## Finalwork
+
+    In my finalwork,i created small squares of corresponding size and color based on the picture's data.And then i put the tinter into this project to make these squares bring out some messages.It should be noted that the object must be based on the length and width of the canvas,especially the pixels.The reason why i want to make a project like this is that i think pictures are the most direct way to convey some informations.Otherwise,it's a very simple way to mke pictures more vivid.
