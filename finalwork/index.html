@@ -50,15 +50,15 @@
 
         canvas = document.createElement('canvas');
         content = canvas.getContext('2d');
-        canvas.width = 200;
-        canvas.height = 200;
+        canvas.width = 500;
+        canvas.height = 500;
         document.body.appendChild( canvas );
         //  container.appendChild( canvas );
         img = new Image();
         img.src = "bg1.jpg";
         canvas.style.position = 'absolute';
         img.onload = function () {
-            content.drawImage(img, 10, 10, canvas.width, canvas.height);
+            content.drawImage(img, 100, 100, canvas.width, canvas.height);
             imgDate = content.getImageData(0,0,canvas.width, canvas.height);
             createPotCloud();   //to create some particles
         };
@@ -73,13 +73,14 @@
         info.style.width = '100%';
         info.style.textAlign = 'center';
         info.innerHTML = 'image conversion';
-        container.appendChild( info );
+        container.appendChild( info ); //set the size and scale of the container
 
-        scene = new THREE.Scene();
+        scene = new THREE.Scene();//create a scene
 
         camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 1000 );
-        camera.position.set( 0, 150, 500 );
-        scene.add( camera );
+        //create a camera
+        camera.position.set( 0, 150, 500 );//define the camera's position
+        scene.add( camera );//put the camera in the scene
 
 
         //the controller
@@ -92,14 +93,14 @@
         controls.staticMoving = true;
         controls.dynamicDampingFactor = 0.3;
         controls.maxDistance=1000;
-        controls.minDistance=0;
+        controls.minDistance=0;//control the camera rotation to render the canvas
 
 
         renderer = new THREE.WebGLRenderer( { antialias: true } );
         renderer.setClearColor( 0x000000 );
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( window.innerWidth, window.innerHeight );
-        container.appendChild( renderer.domElement );
+        container.appendChild( renderer.domElement );//render various materials
 
         stats = new Stats();
         container.appendChild( stats.dom );
@@ -127,7 +128,7 @@
 
     }
 
-    //
+    //set document's size and render it
 
     function onDocumentMouseDown( event ) {
 
@@ -189,7 +190,7 @@
 
     }
 
-    //
+    //Render all the stuff mentioned in it.
 
     function animate() {
 
@@ -200,13 +201,13 @@
 
     }
 
-    function render() {
+    function render() {//render the scene,camera and the controller
 
         renderer.render( scene, camera );
         controls.update();
 
     }
-    function createPotCloud() {     //create particles
+    function createPotCloud() {     //create a canvas
         console.log(imgDate);
         var particles = canvas.width * canvas.height;
         var geometry = new THREE.BufferGeometry();
